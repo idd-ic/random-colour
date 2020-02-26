@@ -37,9 +37,6 @@ Let's start with one of the macro steps...
     Round the resulting number down (aka, floor! Note: "ceil" will round up) to create options 0-255
 */
 
-
-
-
 function changeBackground(event) {
     let colourRed =   Math.floor(Math.random() * 256);
     let colourGreen = Math.floor(Math.random() * 256);
