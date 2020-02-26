@@ -11,7 +11,6 @@ Test each micro solution in isolation and independent of the macro solution when
 Let's start with one of the macro steps...
 */
 
-
 // MACRO STEP: 
 //   Generate a random RGB number
 // MICRO STEPS:
@@ -22,11 +21,12 @@ Let's start with one of the macro steps...
 //   5. Put them in the console to ensure they're not the same, refresh repeatedly
 //   6. Format the number into a string and test in the console: rgb(#, #, #)
 
-let colourRed =   Math.floor(Math.random() * 256);
-let colourGreen = Math.floor(Math.random() * 256);
-let colourBlue =  Math.floor(Math.random() * 256);
+// let colourRed =   Math.floor(Math.random() * 256);
+// let colourGreen = Math.floor(Math.random() * 256);
+// let colourBlue =  Math.floor(Math.random() * 256);
 
-console.log(`rgb(${colourRed}, ${colourGreen}, ${colourBlue})`);
+
+// console.log(`rgb(${colourRed}, ${colourGreen}, ${colourBlue})`);
 
 /*  Breakdown of the random number code (the right side of = assignment):
 - Math.random()
@@ -40,8 +40,21 @@ console.log(`rgb(${colourRed}, ${colourGreen}, ${colourBlue})`);
 
 
 
+function changeBackground(event) {
+    let colourRed =   Math.floor(Math.random() * 256);
+    let colourGreen = Math.floor(Math.random() * 256);
+    let colourBlue =  Math.floor(Math.random() * 256);
+    let colourRandom = (`rgb(${colourRed}, ${colourGreen}, ${colourBlue})`);
+
+    console.log(colourRandom);
+    document.body.style.background= colourRandom;
+}
+
 // NEXT STEPS
 // - Determine the remaining macro steps, write them out!
 // - Once determined, break each step down into micro steps
 // - Test each macro solution in isolation (console output helps)
 // - Begin to combine the steps together to create a final solution (test as you go!)
+
+
+document.getElementById('random').addEventListener(`click`, changeBackground);
